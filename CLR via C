@@ -8,3 +8,91 @@ grammar_cjkRuby: true
 ## Compiling
 ![Compile source code into modeules](./images/1534907138877.png)
 
+### Managed Module
+* PE32 / PE32+ header:
+	* versions requirement
+	* type of file: GUI, CUI, DLL
+	* timestamp
+* CLR header
+	* managed module indicator
+	* CLR required, flags.
+	* MethodDef metadata token
+	* location / size of module's metadata, etc
+* Metadata
+	* Type table
+	* Member table
+* IL code
+	* runtime compilation
+
+### Why Metadata?
+* Required of CLR, contains Types & IDLs
+* No headers, no libs: Compilers read metadata directly from modules
+* Reflections
+* Type safe
+* Serialize objects
+* GC
+* C/C++ could except from CLR
+
+## Linker
+* Managed modules(IL, metadata) + Resources => CSC/VBC => Assembly(Manifest + IL, metadata + Resources)
+* Versions etc.
+* No extra dependencies
+
+## Loading CLR
+* check CLR
+	* Library: MSCorEE.dll
+	* Tool: clrver.exe
+* check platform versions
+	* Tool: dumpbin.exe, corflags.exe
+	* and a diagram for different platform
+* process creation: 
+	* check headers
+	* MSCorEE.dll get corresponding libs, initialize CLR
+	* load exe assembly
+	* call Main
+
+## Executing Assembly
+* IL: 
+	* cpu dependent
+	* obj oriented
+	* ILAsm.exe ILDasm.exe
+* Call Method:
+	* Before: detect types referred, 
+	* 1st run of method : refer to the picture
+	* 2nd run of mehtod, no MSCorEE.dll part
+
+![Call a method first time](./images/1534930366420.png)
+
+* JIT compiler:
+	* store the native CPU instructions in dynamic memory.
+	* double instance when open 2 applications
+	* c# compiler for code optimization: 
+		* /optimize: control /debug, generate nop for debugger stops
+		* /debug: when /optimize-, this will take effect
+			* /debug:full, runtime attach support + pdb
+			* /debug:pdbonly, pdb symbol file
+			* /debug+, 
+			* /debug-
+* Run
+	* unmanaged: just byte code and run
+	* IL runtime compile: Performance not drawback, because
+		* CPU platform feature used.
+		* branch prediction, optimize
+		* self-profiling and recompile the IL when app runs ... 
+* Get rid of IL runtime compile:
+	* Tool: NGen.exe
+* System.Runtime.ProfileOptimization:
+	* runtime optimization...
+
+## IL and Verification
+* IL : stack based, typeless, 
+* IL hide CPUs
+	* Verification: examine the high level IL and ensure SAFE.
+		* check parameter type
+		* check return value
+		* check return statement
+		* address space protection
+* Unsafe Code:
+	* compile flag: /unsafe
+	* System.Security.Permissions.SecurityPermissionFlag = SkipVerification
+	* Verification check: PEVerify.exe
