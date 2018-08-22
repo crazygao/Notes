@@ -96,3 +96,40 @@ grammar_cjkRuby: true
 	* compile flag: /unsafe
 	* System.Security.Permissions.SecurityPermissionFlag = SkipVerification
 	* Verification check: PEVerify.exe
+
+## NGen.exe
+* build to byte code
+	* Improve start time:
+	* Reduce application working set: allow code to be shared.
+* When native file exist, use native, else, use IL & JIT
+* Drawback
+	* No intellectual property protection
+	* Can get out of sync...
+	* a net win.
+* Long time startup apps.
+	* Managed Profile Guided Optimization tool: MPGO.exe
+
+## Framework Class Library, FCL
+* Web Services: ASP.NET XML Web Service / WCF
+* Web Forms
+* Rich Windows GUI app: WPF, Windows Form
+* Console
+* Windows Services, Windows Service Control Manager(SCM)
+* DB stored procedure: SQL, Oracle, DB2
+* Component library
+
+## Common Type System, CTS
+Type system Microsoft created itself...
+
+## Common Language Specification, CLS
+* CTS + CLS, communication between languages
+	* C#, Basic, Fortran: reuse libs in between
+* \[assembly: CLSCompliant(true)\]
+* [Cross-Language Interoperability](https://msdn.microsoft.com/en-us/library/730f1wy3.aspx?f=255&MSPPError=-2147217396)
+
+## Interoperability with unmanaged code
+* Managed -> unmanaged: P/Invoke
+* Managed -> COM component: TlbImp.exe
+* Unmanaged -> managed: tlbexp.exe, regasm.exe
+* [CLRInterop](https://archive.codeplex.com/?p=clrinterop)
+
