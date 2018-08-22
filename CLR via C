@@ -1,0 +1,10 @@
+---
+title: 2018-8-22 CLR via C#, Part 1
+tags: C#
+grammar_cjkRuby: true
+---
+
+# CLR Execution Model
+## Compiling
+![Compile source code into modeules](./images/1534907138877.png)
+
