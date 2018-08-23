@@ -53,4 +53,80 @@ MemberRef|one entry foreach member referenced by the module.<br>member name + si
 [Common Reference Metadata Table]
 
 ## Combining Modules to Form an Assembly
+* Assembly
+	* manifest: names of files, version, culture, publisher, exported types
+	* reusable types
+	* version number
+	* security infos
+* Assembly decouple logical & physical notion of reusable types
+
+Manifest Metadata Table Name | Description
+|----|----|
+Assembly Def|assembly name + version + culture + flags + hash + public key
+FileDef|one for each PE and resource file.<br> filename + extension + hash value + flags
+ManifestResourceDef|one for each resource.<br>name + flags + n_FileDef
+ExportedTypesDef|One Entry for each public type from all the PE modules.<br>name + n_FileDef, n_TypeDef_internal
+[Manifest Metadata Table]
+
+* Compile into assembly
+	* /t:exe, CUI
+	* /t:winexe , GUI
+	* /t:appcontainerexe , Windows Store executable
+	* /t:library , class library
+	* /t:winmdobj , WINMD library, object must be passed to WinMDExp.exe tool 
+	* /t:module: produce a PE without manifest, part of DLL, manifested by other assembly. /out:a.netmodule
+		* add a module: /addmodule
+		* when build, all files reference should be present
+		* when runtime, lazy loading
+
+## Use assembly linker, al
+
+## Adding Resource Files to an Assembly
+* AL:
+	* /embed: embed resources
+	* /link: file itself not embedded
+* csc
+	* /resource
+	* /linkresource
+* to embed win32 resource
+	* .res file, /win32res
+	* .ico file, /win32icon
+* AL check version resource files
+	* /fileversion
+	* /poductversion
+	* FILEFLAGSMASK
+	* FILEFLAGS = 0
+	* FILEOS = VOS__WINDOWS32
+	* /target
+	* FILESUBTYPE = VFT_UNKNOWN
+	* /version
+	* /description
+	* /company
+	* /title
+	* /version
+	* /out
+	* /copyright
+	* /trademark
+	* PRIVATEBUILD =
+	* /product
+	* /productversion
+	* SPECIALBUILD = 
+## Simple App Deploy, Privately depolyed assemblies
+
+* WinStore - appx.
+* Desktop - just files
+* MSIExec.exe
+* VS publish
+
+## Simple Administrative Control
+* Program.exe.config
+```xml
+<configuration>
+    <runtime>
+	    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+		    <probing privatePath="AuxFiles" />
+		</assemblyBinding>
+	</runtime>
+</configuration>
+```
 
