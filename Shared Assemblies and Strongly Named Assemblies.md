@@ -42,7 +42,7 @@ Series of step that you should follow...
 	* if codeBase is URL: this is a download cache
 
 ## Runtime resolve Type Reference
-![enter description here](./images/1535352651493.png)
+![Resolve Type Reference](./images/1535352651493.png)
 
 ## Advanced Administrative Control
 * using xml configuration file
