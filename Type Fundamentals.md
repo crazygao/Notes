@@ -36,4 +36,14 @@ Finalize|called when GC.
 * __is, as__
 	* is: check
 	* as: cast without raising exception.
-* Namespaces and Assemblies
+
+## Namespaces and Assemblies
+
+* __using__:
+	* using namespaces;
+	* using type = namespace.type;
+
+## How things related at runtime
+* Types, Objects, Thread Stack, Heap
+	* Type object pointer -> System.Type
+![Runtime Object Model](./images/1535384671886.png)
