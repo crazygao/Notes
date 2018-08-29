@@ -19,5 +19,6 @@ grammar_tableExtra: true
 	* string
 	* object
 	* dynamic
-* 
+
+[To be continued]
 
