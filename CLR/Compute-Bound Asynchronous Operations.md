@@ -1,5 +1,5 @@
 ---
-title: Compute-Bound Asynchronous Operations
+title: 27 Compute-Bound Asynchronous Operations
 tags: C#
 grammar_cjkRuby: true
 grammar_tableExtra: true
