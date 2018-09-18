@@ -8,3 +8,23 @@ grammar_tableExtra: true
 [^1x]: 曾经在Yinxiang上有一篇，并不详细。
 
 ## Shell Variables and Printing
+* reference and dereference a variable.
+```bash
+FIRST_ARGUMENT="$1"
+echo "Hello, world $FIRST_ARGUMENT!"
+```
+
+* Special Chars
+	* Use args that contain SPACES , SLASHes
+		* use "" to quote the strings.
+		* especiallly making Filenames
+	* Use quotation marks in string
+		* backslash
+
+```bash
+MYSTRING="The word of the day is \"sedentary\"."
+```
+
+## Export Shell Varibles
+* _export_ buildin
+* 
