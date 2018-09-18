@@ -27,4 +27,14 @@ MYSTRING="The word of the day is \"sedentary\"."
 
 ## Export Shell Varibles
 * _export_ buildin
-* 
+    * Careful: Export once will take effect during the time!
+
+## Override Env for Child Process
+```bash
+MYVAR=7 ./printmyvar.sh
+```
+
+## Delete Shell Variables
+* unset:
+    * eg: unset MYVAR
+
