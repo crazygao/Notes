@@ -16,4 +16,24 @@ grammar_tableExtra: true
 	* terminate the loop with `break` or skip with `continue`
 	* break or continue multiple enclosing loops.
 * `for` statement: Iterate through items in list.
-	* 
+	* `for in ; do done`
+		* for i in \*.jpg: for and shell globbing.
+		* for i in a b c\ d: Careful for IFS
+	* `for (( i = 1 ; i <= $1 ; i++ )) ; do done`
+		* not portable, use while instead
+* `case` statement: 
+	* \* is equivalent to default in C
+
+```bash
+case expression in
+    [(] value | value | value | ... ) command; command; ... ;;
+    [(] value | value | value | ... ) command; command; ... ;;
+    ...
+esac
+```
+* `expr` Command: String and Integer Math
+	* expr accept EXPRESSION or COMMANDS surrounded by quotes.
+
+```bash
+expr "This is a cat" '<' "I am a person"
+```
