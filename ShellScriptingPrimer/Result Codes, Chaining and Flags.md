@@ -24,4 +24,7 @@ grammar_tableExtra: true
 		* "Blah$@Blah", Blah is append to the first and last argument
 	* shift: + num, remove arguments from the arg list.
 	* getopts builtin, getopt command:
+```bash
+getopts optstring user_specific_vars [args]
+```
 
