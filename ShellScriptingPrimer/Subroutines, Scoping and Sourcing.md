@@ -9,3 +9,12 @@ grammar_tableExtra: true
 	* no exceptions
 
 ## Subroutine Basics
+```bash
+mysub()
+{
+	echo "Arg1: $1"
+	return 3
+}
+mysub "This is an arg"
+echo "
+```
