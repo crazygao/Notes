@@ -33,3 +33,14 @@ tar -cf - file1 file2 file3 | \
 	* You can freely use global vars
 	* Cannot use variable shadowed by local vars
 	* cannot change global variables during inline execution.
+
+## Including One Script into Another1
+* `.`, `source`
+* Finding Absolute Path of Current Script
+
+```bash
+SCRIPT="$(which $0)"
+if [ "x$(echo $SCRIPT | grep '^\/')" = "x" ] ; then
+	SCRIPT = "$PWD/$SCRIPT"
+fi
+```
