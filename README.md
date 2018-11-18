@@ -10,3 +10,5 @@
 [Document](https://www.safaribooksonline.com/library/view/3d-math-primer/9781439869819/K13210_fm01.xhtml)
 [Wolfram MathWorld](http://mathworld.wolfram.com)
 [Reference CG Books](https://www.quora.com/What-are-some-good-computer-graphics-books)
+[Emacs Series](https://www.youtube.com/watch?v=x5KiYDd9s8k&index=2&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg)
+* Series 4, buffers
