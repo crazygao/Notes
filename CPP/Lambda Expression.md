@@ -16,7 +16,11 @@ grammar_tableExtra: true
 		* 
 2. (Optional) Parameter List
 3. (Optional) mutable specification
+	* Mutable specification: cancel const-by-value.
 4. (Optional) exception specification
+	* noexcept.There is static check for this case.
 5. (Optional) trailing-return-type
+	* auto deduced
 6. Lambda body.
+	* 
 
