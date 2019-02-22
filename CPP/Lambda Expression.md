@@ -30,5 +30,7 @@ grammar_tableExtra: true
 3. (Optional) mutable specification
 4. (Optional) exception specification
 5. (Optional) trailing-return-type
+	* can be deduced.
 6. Lambda body.
+	* Can access: capture variables, parameters, locally-declared vars, class data members, static storage duration variables.
 
