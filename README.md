@@ -14,3 +14,6 @@
 ## C++ Template Metaprogramming
 [Document](https://www.safaribooksonline.com/library/view/c-template-metaprogramming/0321227255/pr02.html)
 * Series 4, buffers
+
+## Learn Vimscript the Hard Way
+[Website](http://learnvimscriptthehardway.stevelosh.com)
