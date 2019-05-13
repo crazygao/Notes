@@ -1,6 +1,6 @@
 ---
 title: Vim programming
-tags: Office
+tags: Vim
 grammar_cjkRuby: true
 grammar_tableExtra: true
 ---
