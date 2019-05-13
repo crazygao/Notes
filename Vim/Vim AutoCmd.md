@@ -1,6 +1,6 @@
 ---
 title: Vim AutoCmd
-tags: C++
+tags: Vim
 grammar_cjkRuby: true
 grammar_tableExtra: true
 ---
