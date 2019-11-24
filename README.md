@@ -3,6 +3,10 @@
 ## CLR: CLR via C\#
 [Original Document](https://www.safaribooksonline.com/library/view/clr-via-c/9780735668737/ch29.html)  Use MS SSO to login.
 
+=======
+## Windows via C/C++
+PDF book.
+
 ## Windows Internals
 [Original Document](https://www.safaribooksonline.com/library/view/windows-internals-seventh/9780133986471/ch01.html)
 
@@ -18,6 +22,3 @@
 ## C++ Template Metaprogramming
 [Document](https://www.safaribooksonline.com/library/view/c-template-metaprogramming/0321227255/pr02.html)
 * Series 4, buffers
-
-## Learn Vimscript the Hard Way
-[Website](http://learnvimscriptthehardway.stevelosh.com)
