@@ -1,0 +1,83 @@
+* Function Templates
+** Deduce the return type:
+1. Auto: deduce and auto decay;
+2. Decltype: eg, decltype(b>a?a:b), decay it.
+** Return Common Type: Since c++ 11, std::common_type_t...
+** Default template arguments
+1. decltype
+2. std::common_type
+3. use auto could make max advantage of template parameter deduction.
+** Overload Function templates
+1. prefer the non-template one.
+2. check max2.cpp. careful that template could not perform
+   transformation.
+3. define detailed overloads at the beginning.
+** Do not inline.
+** Use "pass by value"
+** Not constexpr.
+* Class Templates
+** Always specify template arguments explicitly
+** Only called member functions are instantiated!
+** Use of Class Templates:
+*** similar to overload of function templates
+1. Specialize a class template, and you should also specialize all
+   member implementations
+*** Partial Usage of class template: friends
+1. use simple member function
+2. declare a second template variable
+3. forward declare, and specialize at definition.
+** Partial specialization
+T* specialize for T
+*** resolve ambiguous partial specialization.
+** Default template arguments
+** Type aliases
+  Simple ones
+*** typedef: 
+*** using: since c++11
+template aliases
+*** simple. don't forget the typename definition
+member template aliases
+*** typedef:
+*** using:
+*** standard library use aliases _t for type traits.
+** Class template arguments deduction >= C++17
+*** Initializer
+*** Deduction Guides:
+#+BEGIN_SRC C++
+  Stack(const char*) -> Stack<std::string>
+#+END_SRC
+** Templatized aggregates >= C++
+1. aggregate: (classes/structs with no user-provided, explicit, or
+   inherited constructors, no private or protected nonstatic data
+   members, no virtual functions, and no virtual, private, or
+   protected base classes)
+* Nontype template parameters
+** could be used in Class template & function template
+*** You can specify a parameter deduced from previous parameter
+#+BEGIN_SRC C++
+  template<auto Val, typename T = decltype(Val)>
+  T foo();
+
+  template<typename T, T Val = T{}>
+  T bar();
+#+END_SRC
+** Restrictions:
+1. constant integral values (including enumerations), pointers to
+   objects/functions/members, lvalue references to objects or
+   functions, or std::nullptr_t (the type of nullptr).
+2. When passing template arguments to pointers or references, the
+   objects must not be string literals, temporaries, or data members
+   and other subobjects
+2.1. >=c++11, object have to have external linkage
+2.2. >=c++14, object have to have external or internal linkage
+3. Avoid invalid expression
+** template parameter type auto
+#+BEGIN_SRC C++
+  template <decltype(auto) N>
+  class C {};
+  int i;
+  C<(i)> x; // N is int&
+#+END_SRC
+* Variadic Templates
+** Recursive, need non-variadic template to stop the recursion
+** sizeof...

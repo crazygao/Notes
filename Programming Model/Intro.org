@@ -1,0 +1,5 @@
+* Intro
+** Limits of single models
+*** OO: overuse of state and inheritance.
+*** FP: overuse of higher-order programming.
+*** Logic Language: overuse of Horn clause syntax and search.
