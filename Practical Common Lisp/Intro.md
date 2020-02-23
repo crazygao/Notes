@@ -20,7 +20,6 @@ grammar_tableExtra: true
 
 | Name | Type | Usage |
 | ---- | ---- | ---- |
-| format | function | |
 | defun | function | |
 | ,quit / ,sayoonara | keyword | |
 | load | function | (load "hello.lisp") |
