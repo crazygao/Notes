@@ -1,9 +1,8 @@
 # Notes
 
-## CLR: CLR via C\#
+## CLR: CLR via C#
 [Original Document](https://www.safaribooksonline.com/library/view/clr-via-c/9780735668737/ch29.html)  Use MS SSO to login.
 
-=======
 ## Windows via C/C++
 PDF book.
 
@@ -22,3 +21,6 @@ PDF book.
 ## C++ Template Metaprogramming
 [Document](https://www.safaribooksonline.com/library/view/c-template-metaprogramming/0321227255/pr02.html)
 * Series 4, buffers
+
+## Practical Common Lisp
+[WebPage](http://www.gigamonkeys.com/book/)
