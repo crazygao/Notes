@@ -19,6 +19,8 @@ grammar_tableExtra: true
 | force output |
 | read line |
 | supplied-p feature |
+| change value |
+| reverse a list |
 
 
 | Slime Functions |
@@ -47,6 +49,10 @@ grammar_tableExtra: true
 | force-output | macro | Ensure Lisp doesn’t wait for a newline before it prints the prompt.
 (force-output \*query-io\*)|
 | read-line | function | Read from stream (read-line \*query-io\*) |
+|||Define a parameter is provided (a "default" a-p)|
+|setf | macro | setf {pair}* |
+| reverse | function | (reverse '(1 2 3)) |
+| defmacro | keyword | (defmacro backwards (expr) (reverse expr)) |
 
 
 
