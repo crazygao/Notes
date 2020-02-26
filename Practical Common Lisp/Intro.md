@@ -21,6 +21,12 @@ grammar_tableExtra: true
 | supplied-p feature |
 | change value |
 | reverse a list |
+| define a macro |
+| stop Lisp evaluating a form |
+| stop Lisp evaluating a expression |
+| evaluate in a stop expression |
+| splice the value of expression into enclosing list |
+| check macro expansion result |
 
 
 | Slime Functions |
@@ -53,7 +59,11 @@ grammar_tableExtra: true
 |setf | macro | setf {pair}* |
 | reverse | function | (reverse '(1 2 3)) |
 | defmacro | keyword | (defmacro backwards (expr) (reverse expr)) |
-
+| ' | keyword | (defun a (field) (list 'getf field)) stop form evaluating |
+| \` | keyword | \`(+ 2 3) |
+| , | keyword | \`(1 2 ,(+ 1 2)) |
+| @ | keyword | \`(and ,@(list 1 2 3)) => (and 1 2 3) |
+| macroexpand-1 | function | (macroexpand-1 '(where :title "Give Us a Break")) |
 
 
 | Slime Command | Shortcut | Usage | 
