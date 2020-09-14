@@ -1,5 +1,5 @@
 ---
-title: Paint by Numbers
+title: 7_Paint by Numbers
 tags: shell
 grammar_cjkRuby: true
 grammar_tableExtra: true
